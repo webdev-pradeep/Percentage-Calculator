@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Percentage Calculator</h1>
+      <div>
+        <label>Obtained Marks</label>
+        <input id="obtained" />
+      </div>
+      <div>
+        <label>Total Marks</label>
+        <input id="total" />
+      </div>
+      <button onclick="percentageCalculator()">Calculate</button>
+      <h2>Result</h2>
+      <h3 id="result"></h3>
+    </div>
+
+    <script>
+      const obtainedInput = document.getElementById("obtained");
+      const totalInput = document.getElementById("total");
+      const resultEl = document.getElementById("result");
+
+      function percentageCalculator() {
+        if (!obtainedInput.value || !totalInput.value) {
+          alert("Please provide a valid number");
+          return;
+        }
+
+        const percentage = (obtainedInput.value / totalInput.value) * 100;
+        resultEl.innerHTML = percentage + "%";
+        console.log(percentage + "%");
+      }
+    </script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        width: 100%;
+        font-size: 20px;
+        padding: 2px 4px;
+        height: 30px;
+        outline: none;
+        border-radius: 4px;
+        border: 1px solid gray;
+        transition: all 0.2s;
+      }
+      input:focus {
+        border: 1px solid blue;
+        height: 40px;
+      }
+
+      .form-container {
+        display: grid;
+        gap: 12px;
+        padding: 24px;
+        width: 90%;
+        max-width: 480px;
+        background-color: white;
+        border: 1px solid blueviolet;
+        border-radius: 12px;
+      }
+
+      .form-container h1 {
+        text-align: center;
+      }
+      .form-container div {
+        display: grid;
+      }
+
+      button {
+        border: none;
+        padding: 12px 24px;
+        background-color: rgb(0, 0, 108);
+        color: white;
+        font-size: 18px;
+        border-radius: 8px;
+      }
+    </style>
+     
+  </body>
+</html>
